@@ -1,0 +1,10 @@
+{% unless section.hidden %}
+<section class="cards {{ section.fullWidth }}" id="cards">
+
+  {% assign cards = site.cards | sort: 'order' %}
+  {% for card in cards %}
+    {% include {{ card.include }} %}
+  {% endfor %}
+
+</section>
+{% endunless %}
